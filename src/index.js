@@ -8,11 +8,17 @@ export default function App() {
   return (
     <div id="wrapper">
       <Header />
-        <Button title="Create tenant" url="/create-tenant" />
+      <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Add Tenant</h1>
+                </div>
+            </div>
+        <Routes />
+        </div>
     </div>
   );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Routes />, rootElement);
-      
+ReactDOM.render(<App />, rootElement);

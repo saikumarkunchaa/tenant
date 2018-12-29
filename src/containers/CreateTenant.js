@@ -33,32 +33,41 @@ class CreateTenant extends Component {
   render() {
     return (
       <div>
-        <form
-          className="container"
-          method="POST"
-          onSubmit={this.handleFormSubmit}
-        >
-          <Input
-            name="text"
-            placeholder="Tenant Name"
-            title="Tenant Name"
-            handleChange={e => this.handleName(e)}
-          />
-          <br />
-          <label>Timezone:</label>
-          <TimezonePicker
-            value={this.state.timezone}
-            onChange={timezone => this.handleTimezone(timezone)}
-            inputProps={{
-              placeholder: "Select Timezone...",
-              name: "timezone",
-              title: "Timezone"
-            }}
-          />
-          <br />
-          <input type="submit" value="submit" />
-        </form>
-      </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class=" panel-primary">
+                <form
+                  className="container"
+                  method="POST"
+                  onSubmit={this.handleFormSubmit}
+                >
+                  <Input
+                    name="text"
+                    placeholder="Tenant Name"
+                    title="Tenant Name"
+                    handleChange={e => this.handleName(e)}
+                  />
+                  <br />
+                  <div class="form-group">
+                  <label class="form-label">Timezone:</label><br />
+                  <TimezonePicker
+                    value={this.state.timezone}
+                    onChange={timezone => this.handleTimezone(timezone)}
+                    inputProps={{
+                      placeholder: "Select Timezone...",
+                      name: "timezone",
+                      title: "Timezone"
+                    }}
+                  />
+                  </div>
+                  <br />
+                  <input type="submit" value="submit"  class = "btn btn-primary"/>
+                </form>
+              </div>
+            </div>
+            </div>
+          </div>
+         
     );
   }
 }
