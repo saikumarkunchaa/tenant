@@ -1,4 +1,4 @@
-export const createTenant = data => ({
-  type: "CREATE_TENANT",
+export const createNews = data => ({
+  type: "CREATE_NEWS",
   payload: data
 });

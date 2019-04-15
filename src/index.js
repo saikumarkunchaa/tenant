@@ -9,11 +9,6 @@ export default function App() {
     <div id="wrapper">
       <Header />
       <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Add Tenant</h1>
-                </div>
-            </div>
         <Routes />
         </div>
     </div>

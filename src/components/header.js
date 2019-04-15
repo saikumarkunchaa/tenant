@@ -3,10 +3,10 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     let margin = {marginBottom:0};
-    let width1 = {width:"40%"};
-    let width2 = {width:"20%"};
-    let width3 = {width:"60%"};
-    let width4 = {width:"80%"};
+    // let width1 = {width:"40%"};
+    // let width2 = {width:"20%"};
+    // let width3 = {width:"60%"};
+    // let width4 = {width:"80%"};
 
     return (
       <nav class="navbar navbar-default navbar-static-top" role="navigation"  style= {margin} >
