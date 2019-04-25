@@ -1,4 +1,5 @@
 import { put, takeLatest, all, call, take,takeEvery } from "redux-saga/effects";
+import axios from 'axios';
 export function* CreateTenant(info) {
   try {
     const result = yield call(fetch, "https://sai.com", {
@@ -34,12 +35,25 @@ export function* actionWatcher() {
   yield call(CreateTenant, action.payload);
 }
 export function* actionCreateNews() {
-  //yield takeLatest('CREATE_TENANT',CreateTenant);
-  //console.log('kiran kumar saga');
   const actionData = yield takeLatest("CREATE_NEWS",createNews);
   yield put({ type: "DATA_LOADED", actionData });
- // yield call(createNews, action.payload);
 }
+export function* actionLifeCycle() {
+  const actionData = yield takeLatest("LAZY_LOAD",lifeCycle);
+  yield put({ type: "LAZY_LOADED", actionData });
+}
+
+export function* lifeCycle() {
+  try{
+  const response = yield call(axios.get, 'https://jsonplaceholder.typicode.com/posts');
+  console.log('response'+JSON.stringify(response));
+  return response;
+} catch(e) {
+
+  }
+  
+} 
+
 export default function* rootSaga() {
-  yield all([actionWatcher(), actionCreateNews()]);
+  yield all([actionWatcher(), actionCreateNews(),actionLifeCycle()]);
 }

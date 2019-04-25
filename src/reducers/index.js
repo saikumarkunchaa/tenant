@@ -6,6 +6,10 @@ const reducer = (state = {}, action) => {
       const NewsData = action.payload;
       console.log("kiran" + NewsData);
       return { ...state, NewsData };
+      case "LAZY_LOADED":
+      const lifeCycleData = action.payload;
+      console.log("Life Cycle" + lifeCycleData);
+      return { ...state, data: lifeCycleData,loading:false };  
     default:
       return state;
   }
