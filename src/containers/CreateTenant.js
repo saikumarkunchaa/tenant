@@ -1,7 +1,5 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-const fileMinSize = 1 * 1000 * 1000; // 1MB
-const fileMaxSize = 50 * 1000 * 1000; // 50MB
 const validate = values => {
   const errors = {}
   if (!values.news_title) {

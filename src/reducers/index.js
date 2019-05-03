@@ -4,12 +4,12 @@ const reducer = (state = {}, action) => {
       return { ...state, news: action, loading: false };
     case "CREATE_NEWS":
       const NewsData = action.payload;
-      console.log("kiran" + NewsData);
       return { ...state, NewsData };
       case "LAZY_LOADED":
-      const lifeCycleData = action.payload;
-      console.log("Life Cycle" + lifeCycleData);
-      return { ...state, data: lifeCycleData,loading:false };  
+      const lifeCycleData = action.response;
+      return { data: lifeCycleData.data,loading:false };
+      case "NEWS_CREATED":
+      return { Newsdata: action, status: 'success' };  
     default:
       return state;
   }
